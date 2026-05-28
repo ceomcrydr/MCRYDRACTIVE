@@ -22,10 +22,8 @@ export default function LoginPage() {
 
   return (
     <>
-      {/* Beta banner */}
       <BetaBanner />
 
-      {/* Nav */}
       <nav className={styles.nav}>
         <a href="/" className={styles.navLogo}>
           <LogoSvg />
@@ -39,7 +37,6 @@ export default function LoginPage() {
         </div>
       </nav>
 
-      {/* BG gradient */}
       <div className={styles.bgGradient} />
 
       <main className={styles.main}>
@@ -50,6 +47,7 @@ export default function LoginPage() {
 
         {/* Platform cards */}
         <div className={styles.platformWrapper}>
+          {/* RIDER CARD */}
           <div
             className={`${styles.platformCard} ${styles.rider} ${platform === 'rider' ? styles.selected : ''}`}
             onClick={() => setPlatform('rider')}
@@ -57,24 +55,30 @@ export default function LoginPage() {
             <div className={styles.pcCheck}>✓</div>
             <div className={styles.pcTop}>
               <div className={`${styles.pcIconWrap} ${styles.riderIcon}`}>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                  <path d="M6 26C6 20 10 16 18 14M18 14C22 13 26 14 28 18M18 14L16 8H22L24 14" stroke="#f85c00" strokeWidth="2" strokeLinecap="round"/>
-                  <circle cx="10" cy="26" r="4" stroke="#f85c00" strokeWidth="2"/>
-                  <circle cx="26" cy="26" r="4" stroke="#f85c00" strokeWidth="2"/>
+                <svg width="36" height="36" viewBox="0 0 100 60" fill="none">
+                  <ellipse cx="22" cy="50" rx="14" ry="10" stroke="#f85c00" strokeWidth="4" fill="none"/>
+                  <ellipse cx="78" cy="50" rx="14" ry="10" stroke="#f85c00" strokeWidth="4" fill="none"/>
+                  <path d="M36 50 L50 50 L58 30 L70 30 L78 50" stroke="#f85c00" strokeWidth="4" strokeLinecap="round" fill="none"/>
+                  <path d="M22 40 L36 30 L50 30" stroke="#f85c00" strokeWidth="4" strokeLinecap="round" fill="none"/>
+                  <path d="M54 20 L62 10 L72 14" stroke="#f85c00" strokeWidth="3" strokeLinecap="round" fill="none"/>
+                  <circle cx="60" cy="8" r="6" stroke="#f85c00" strokeWidth="3" fill="none"/>
                 </svg>
               </div>
-              <span className={`${styles.pcBadge} ${styles.riderBadge}`}>Free to Join</span>
+              <span className={`${styles.pcBadge} ${styles.riderBadge}`}>Free</span>
             </div>
-            <div className={`${styles.pcTitle} ${styles.riderTitle}`}>Rider Platform</div>
-            <div className={styles.pcDesc}>For motorcycle enthusiasts, commuters, and passionate riders.</div>
+            <div className={`${styles.pcTitle} ${styles.riderTitle}`}>MC Rider</div>
+            <div className={styles.pcDesc}>For every motorcycle rider in the world. Ride, connect, explore.</div>
             <ul className={styles.pcFeatures}>
-              <li>Garage & bike profiles</li>
-              <li>Ride events & meetups</li>
-              <li>Community feed & groups</li>
-              <li>Deals from local shops</li>
+              <li>Voice ride rooms &amp; group rides</li>
+              <li>Live GPS rider tracking</li>
+              <li>Browse shops &amp; garages</li>
+              <li>Buy &amp; sell motorcycles</li>
+              <li>Events &amp; team pages</li>
+              <li>Social feed — posts &amp; reels</li>
             </ul>
           </div>
 
+          {/* COMMERCIAL CARD */}
           <div
             className={`${styles.platformCard} ${styles.commercial} ${platform === 'commercial' ? styles.selected : ''}`}
             onClick={() => setPlatform('commercial')}
@@ -82,22 +86,21 @@ export default function LoginPage() {
             <div className={`${styles.pcCheck} ${styles.pcCheckGold}`}>✓</div>
             <div className={styles.pcTop}>
               <div className={`${styles.pcIconWrap} ${styles.commercialIcon}`}>
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                  <rect x="6" y="14" width="24" height="16" rx="2" stroke="#f5a623" strokeWidth="2"/>
-                  <path d="M12 14V10C12 7.8 13.8 6 16 6H20C22.2 6 24 7.8 24 10V14" stroke="#f5a623" strokeWidth="2"/>
-                  <path d="M6 20H30" stroke="#f5a623" strokeWidth="1.5" opacity="0.5"/>
-                  <circle cx="18" cy="20" r="2" fill="#f5a623"/>
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="3" stroke="#f5a623" strokeWidth="2"/>
+                  <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="#f5a623" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <span className={`${styles.pcBadge} ${styles.commercialBadge}`}>For Business</span>
+              <span className={`${styles.pcBadge} ${styles.commercialBadge}`}>Business</span>
             </div>
-            <div className={`${styles.pcTitle} ${styles.commercialTitle}`}>Commercial Platform</div>
-            <div className={styles.pcDesc}>For shops, dealerships, brands, and service providers.</div>
+            <div className={`${styles.pcTitle} ${styles.commercialTitle}`}>Commercial</div>
+            <div className={styles.pcDesc}>For shops, garages, and event companies. Reach thousands of riders.</div>
             <ul className={styles.pcFeatures}>
-              <li>Business profile & storefront</li>
-              <li>Inventory & services listing</li>
-              <li>Lead management & CRM</li>
-              <li>Targeted rider ads</li>
+              <li>Product &amp; service listings</li>
+              <li>Promoted offers &amp; ads</li>
+              <li>Customer reviews dashboard</li>
+              <li>Event creation &amp; promotion</li>
+              <li>Business analytics</li>
             </ul>
           </div>
         </div>
@@ -140,53 +143,45 @@ export default function LoginPage() {
           </button>
 
           <div className={styles.signupLink}>
-            Don&apos;t have an account? <Link href="/signup">Sign up free →</Link>
+            No account? <Link href="/signup">Sign up free →</Link>
           </div>
         </div>
 
         {/* Social links */}
         <div className={styles.socialRow}>
-          {[
-            { label: 'X', cls: styles.xBtn, svg: <path d="M17.5 3h-3.5l-4 5.5L6 3H2l5.5 7.5L2 18h3.5l4.5-6 4 6H18l-5.5-7.5L17.5 3z" fill="currentColor"/> },
-            { label: 'IG', cls: styles.igBtn, svg: <><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="17" cy="7" r="1" fill="currentColor"/></> },
-            { label: 'TT', cls: styles.ttBtn, svg: <path d="M19 3v4c-1.5 0-3-.5-4-2v8c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6v4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2V3h8z" fill="currentColor"/> },
-            { label: 'FB', cls: styles.fbBtn, svg: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="1.5" fill="none"/> },
-          ].map(({ label, cls, svg }) => (
-            <a key={label} href="#" className={`${styles.socialBtn} ${cls}`} aria-label={label}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">{svg}</svg>
-            </a>
-          ))}
+          <div className={styles.socialLabel}>Follow Us · @MC.RYDR</div>
+          <div className={styles.socialIcons}>
+            {[
+              { label: 'X', cls: styles.xBtn, svg: <path d="M17.5 3h-3.5l-4 5.5L6 3H2l5.5 7.5L2 18h3.5l4.5-6 4 6H18l-5.5-7.5L17.5 3z" fill="currentColor"/> },
+              { label: 'Instagram', cls: styles.igBtn, svg: <><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="17" cy="7" r="1" fill="currentColor"/></> },
+              { label: 'TikTok', cls: styles.ttBtn, svg: <path d="M19 3v4c-1.5 0-3-.5-4-2v8c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6v4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2V3h8z" fill="currentColor"/> },
+              { label: 'Facebook', cls: styles.fbBtn, svg: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="1.5" fill="none"/> },
+              { label: 'Snapchat', cls: styles.scBtn, svg: <path d="M12 2C9 2 7 4 7 7v1H5l1 3c-1 .5-2 1-2 2s2 1 2 2c0 .5-1 2-4 2.5.5 1 2 1.5 4 1.5.5 1 1.5 1.5 3 1.5.5.5 1 .5 3 .5s2.5 0 3-.5c1.5 0 2.5-.5 3-1.5 2-.5 3.5-1 4-1.5-3-.5-4-2-4-2.5 0-1 2-1.5 2-2s-1-1.5-2-2l1-3h-2V7c0-3-2-5-5-5z" fill="currentColor"/> },
+            ].map(({ label, cls, svg }) => (
+              <a key={label} href="#" className={`${styles.socialBtn} ${cls}`} aria-label={label}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">{svg}</svg>
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* About section */}
-        <div className={styles.aboutSection}>
-          <div className={styles.aboutHeader}>
+        {/* About — link card to full page */}
+        <Link href="/about" className={styles.aboutCard}>
+          <div className={styles.aboutCardLeft}>
+            <div className={styles.aboutCardIcon}>🏍️</div>
             <div>
-              <div className={styles.aboutLabel}>Our Story</div>
-              <div className={styles.aboutTitle}>Built by Riders. For Riders.</div>
+              <div className={styles.aboutCardLabel}>About MCRYDR</div>
+              <div className={styles.aboutCardTitle}>The Story Behind MCRYDR</div>
+              <div className={styles.aboutCardSub}>From a Harley Fat Boy dream to a global motorcycle community</div>
             </div>
           </div>
-          <div className={styles.aboutBody}>
-            <div className={styles.ceoPhotoWrap}>
-              <div className={styles.ceoPhotoPlaceholder}>👤</div>
-              <div className={styles.ceoName}>Abdulqader Al Toubeh</div>
-              <div className={styles.ceoRole}>Founder & CEO</div>
-            </div>
-            <div className={styles.storyText}>
-              <p>MCRYDR was born from a simple frustration: as a rider, I couldn&apos;t find a single place that brought together everything that matters to the motorcycle community.</p>
-              <p>Whether you&apos;re a daily commuter, weekend warrior, or you run a shop — <strong>MCRYDR is your home</strong>. We&apos;re building the platform we always wanted but never had.</p>
-              <div className={styles.storyHighlight}>
-                &ldquo;The best rides aren&apos;t just about the road — they&apos;re about the people you meet along the way.&rdquo;
-              </div>
-              <p>From finding the best local mechanic to connecting with riders in your city, MCRYDR puts it all in one place. And we&apos;re just getting started.</p>
-            </div>
-          </div>
-        </div>
+          <div className={styles.aboutCardArrow}>→</div>
+        </Link>
 
       </main>
 
       <footer className={styles.footer}>
-        <p className={styles.footerCopy}>© 2026 MCRYDR. All rights reserved. Built by riders, for riders.</p>
+        <p className={styles.footerCopy}>© 2026 MCRYDR · Ride. Connect. Discover. · Built for Riders, by Riders.</p>
       </footer>
     </>
   )
