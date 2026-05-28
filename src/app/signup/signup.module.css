@@ -1,0 +1,150 @@
+/* NAV */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 64px;
+  background: rgba(9,9,11,.95); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.navLogo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logoSq {
+  width: 34px; height: 34px; border-radius: 8px; background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: #fff;
+}
+.navWordmark { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 4px; color: var(--white); }
+.navWordmark span { color: var(--orange); }
+.navBack {
+  font-family: 'Barlow Condensed', sans-serif; font-size: .82rem;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none;
+  transition: color .2s;
+}
+.navBack:hover { color: var(--orange); }
+
+/* MAIN */
+.main { max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* STEPS */
+.stepsBar { display: flex; align-items: center; margin-bottom: 40px; }
+.step { display: flex; align-items: center; gap: 10px; flex: 1; }
+.stepDot {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: .95rem;
+  border: 2px solid var(--border); color: var(--muted); background: var(--card);
+  transition: all .3s;
+}
+.active .stepDot { background: var(--orange); border-color: var(--orange); color: #fff; }
+.done .stepDot { background: var(--green); border-color: var(--green); color: #fff; }
+.stepLabel {
+  font-family: 'Barlow Condensed', sans-serif; font-size: .72rem;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+}
+.active .stepLabel { color: var(--orange); }
+.done .stepLabel { color: var(--green); }
+.stepLine { flex: 1; height: 1px; background: var(--border); margin: 0 8px; }
+.lineDone { background: var(--green); }
+
+/* FORM CARD */
+.formCard {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 36px; margin-bottom: 20px;
+}
+.formCard h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 4px; }
+.sub { color: var(--muted); font-size: .88rem; font-weight: 300; margin-bottom: 28px; }
+
+.errorMsg {
+  background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3);
+  color: #ef4444; border-radius: 8px; padding: 10px 14px;
+  font-size: .82rem; margin-bottom: 16px;
+}
+
+.field { margin-bottom: 18px; }
+.field label {
+  display: block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: .68rem; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 7px;
+}
+.field input, .field select {
+  width: 100%; background: var(--deep); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 16px; color: var(--white);
+  font-family: 'Barlow', sans-serif; font-size: .9rem; outline: none;
+  transition: border-color .2s; appearance: none;
+}
+.field input::placeholder { color: var(--muted); font-weight: 300; }
+.field input:focus, .field select:focus { border-color: var(--orange); }
+.field select option { background: var(--deep); }
+.field select:disabled { opacity: .5; cursor: not-allowed; }
+.optional { color: var(--muted); font-size: .75em; }
+
+.fieldRow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* BIKE ENTRIES */
+.bikeEntry {
+  background: var(--deep); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px; margin-bottom: 16px;
+}
+.bikeEntryHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.bikeEntryTitle {
+  font-family: 'Barlow Condensed', sans-serif; font-size: .95rem;
+  font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange);
+}
+.bikeRemove {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(239,68,68,.12); border: 1px solid rgba(239,68,68,.3);
+  color: #ef4444; font-size: .75rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: background .2s;
+}
+.bikeRemove:hover { background: rgba(239,68,68,.25); }
+
+.addBikeBtn {
+  width: 100%; padding: 11px; background: transparent;
+  border: 1px dashed rgba(248,92,0,.4); border-radius: 8px;
+  color: var(--orange); font-family: 'Barlow Condensed', sans-serif;
+  font-size: .82rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; transition: all .2s; display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 4px;
+}
+.addBikeBtn:hover { background: rgba(248,92,0,.08); border-color: var(--orange); }
+
+/* BUTTONS */
+.btnNext {
+  width: 100%; padding: 15px; background: var(--orange); color: #fff;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase; border: none; border-radius: 10px;
+  cursor: pointer; transition: background .2s, transform .15s;
+}
+.btnNext:hover:not(:disabled) { background: var(--orange2); transform: translateY(-1px); }
+.btnNext:disabled { opacity: .5; cursor: not-allowed; }
+
+.btnBackLink {
+  display: block; text-align: center; margin-top: 16px; width: 100%;
+  font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted); text-decoration: none;
+  background: none; border: none; cursor: pointer; transition: color .2s;
+}
+.btnBackLink:hover { color: var(--white); }
+
+/* SUCCESS */
+.successScreen { text-align: center; padding: 40px 20px; }
+.successIcon { font-size: 4rem; margin-bottom: 20px; }
+.successTitle { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 2px; color: var(--green); margin-bottom: 8px; }
+.accountBadge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3);
+  border-radius: 100px; padding: 10px 24px; margin: 16px auto;
+}
+.accountNum { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--green); letter-spacing: 2px; }
+.accountName { font-size: 1rem; font-weight: 600; color: var(--white); }
+.successSub { color: var(--muted); font-size: .9rem; font-weight: 300; max-width: 400px; margin: 0 auto 32px; }
+.btnEnter {
+  display: inline-block; padding: 14px 40px; background: var(--orange); color: #fff;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; border: none; border-radius: 10px;
+  cursor: pointer; text-decoration: none; transition: background .2s;
+}
+.btnEnter:hover { background: var(--orange2); }
+
+@media (max-width: 640px) {
+  .nav { padding: 0 20px; }
+  .fieldRow { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,15 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { createSupabaseServerClient } from '@/lib/supabase/server'
+
+export async function GET(request: NextRequest) {
+  const { searchParams, origin } = new URL(request.url)
+  const code = searchParams.get('code')
+  if (code) {
+    const supabase = await createSupabaseServerClient()
+    await supabase.auth.exchangeCodeForSession(code)
+    const { data: { user } } = await supabase.auth.getUser()
+    const role = user?.user_metadata?.role
+    return NextResponse.redirect(`${origin}${role === 'commercial' ? '/commercial' : '/rider'}`)
+  }
+  return NextResponse.redirect(`${origin}/`)
+}
