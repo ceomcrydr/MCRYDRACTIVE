@@ -11,12 +11,12 @@
 }
 .navBrand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logoSq {
-  width: 34px; height: 34px; border-radius: 8px; background: var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: #000; flex-shrink: 0;
+  width: 34px; height: 34px; border-radius: 8px; background: var(--orange);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-.navName { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 3px; color: var(--white); }
-.navName span { color: var(--gold); }
+.navName { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 3px; color: var(--white); line-height: 1; }
+.navName span { color: var(--orange); }
+.navTagline { font-family: 'Barlow Condensed', sans-serif; font-size: .6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
 
 .bizPill {
   display: flex; align-items: center; gap: 8px;
@@ -240,10 +240,304 @@
 .comingSoon h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; margin-bottom: 8px; }
 .comingSoon p { color: var(--muted); font-size: .9rem; }
 
-@media (max-width: 1024px) {
-  .twoCol { grid-template-columns: 1fr; }
-  .statRow { grid-template-columns: repeat(2, 1fr); }
+/* ── PAGE HEADER ROW ── */
+.pageHdrRow { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; gap: 16px; }
+.pageHdrTitle { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; color: var(--white); margin-bottom: 4px; }
+.pageHdrSub { color: var(--muted); font-size: .88rem; font-weight: 300; }
+
+/* ── LOADING & EMPTY STATES ── */
+.loadingMsg { text-align: center; padding: 60px 0; color: var(--muted); font-size: .9rem; }
+
+.emptyState {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 80px 24px; text-align: center;
+  background: var(--card); border: 1px dashed var(--border); border-radius: 16px;
+}
+.emptyStateIcon { font-size: 3rem; margin-bottom: 16px; }
+.emptyState h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 1px; color: var(--white); margin-bottom: 8px; }
+.emptyState p { color: var(--muted); font-size: .88rem; max-width: 380px; margin-bottom: 20px; }
+
+.emptyWidget { text-align: center; padding: 28px 16px; color: var(--muted); font-size: .82rem; }
+.emptyWidget span { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+.emptyWidget p { margin-bottom: 12px; }
+.emptyWidgetBtn {
+  background: transparent; border: 1px solid rgba(245,166,35,.4);
+  border-radius: 8px; color: var(--gold); font-family: 'Barlow Condensed', sans-serif;
+  font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 8px 16px; cursor: pointer; transition: all .2s;
+}
+.emptyWidgetBtn:hover { background: rgba(245,166,35,.08); }
+
+/* ── ACTION BUTTON (gold) ── */
+.bizActionBtn {
+  padding: 10px 20px; background: var(--gold); color: #000; border: none;
+  border-radius: 8px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: .85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; white-space: nowrap; transition: background .2s, transform .15s; flex-shrink: 0;
+}
+.bizActionBtn:hover { background: var(--gold2); transform: translateY(-1px); }
+
+/* ── MY BUSINESS PANEL ── */
+.bizPanelGrid { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+.bizPanelRight { display: flex; flex-direction: column; gap: 16px; }
+
+.bizFormCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+}
+.bizFormSection {
+  padding: 22px 24px; border-bottom: 1px solid var(--border);
+}
+.bizFormSection:last-of-type { border-bottom: none; }
+.bizFormSectionTitle {
+  font-family: 'Barlow Condensed', sans-serif; font-size: .72rem; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+}
+.bizFormActions {
+  display: flex; align-items: center; justify-content: flex-end; gap: 14px;
+  padding: 18px 24px; background: rgba(245,166,35,.03); border-top: 1px solid var(--border);
+}
+.bizSaveBtn {
+  padding: 11px 28px; background: var(--gold); color: #000; border: none;
+  border-radius: 8px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: .9rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: background .2s;
+}
+.bizSaveBtn:hover:not(:disabled) { background: var(--gold2); }
+.bizSaveBtn:disabled { opacity: .5; cursor: not-allowed; }
+.bizSaveMsg { font-size: .82rem; flex: 1; }
+.bizSaveMsgOk  { color: var(--green); }
+.bizSaveMsgErr { color: #ef4444; }
+
+/* Preview card */
+.bizPreviewCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px;
+}
+.bizPreviewLabel {
+  font-family: 'Barlow Condensed', sans-serif; font-size: .65rem; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+}
+.bizPreviewHdr { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.bizPreviewLogo {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: #000;
+}
+.bizPreviewName { font-family: 'Barlow Condensed', sans-serif; font-size: .95rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 2px; }
+.bizPreviewType { font-size: .72rem; color: var(--gold); }
+.bizPreviewDetails { margin-bottom: 12px; }
+.bizPreviewMeta { font-size: .75rem; color: var(--muted); margin-bottom: 4px; }
+.bizPreviewDesc { font-size: .78rem; color: var(--muted2); line-height: 1.6; }
+.bizPreviewPlaceholder { font-size: .78rem; color: var(--muted); font-style: italic; }
+
+/* Tips card */
+.bizTipsCard {
+  background: rgba(245,166,35,.05); border: 1px solid rgba(245,166,35,.15);
+  border-radius: 14px; padding: 18px 20px;
+}
+.bizTipsTitle { font-size: .82rem; font-weight: 600; color: var(--gold); margin-bottom: 12px; }
+.bizTipsList { list-style: none; padding: 0; margin: 0; }
+.bizTipsList li {
+  font-size: .78rem; color: var(--muted2); padding: 5px 0;
+  padding-left: 16px; position: relative;
+}
+.bizTipsList li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: .7rem; }
+
+/* ── FORM FIELDS (shared) ── */
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.formField { display: flex; flex-direction: column; margin-bottom: 14px; }
+.formField label {
+  font-family: 'Barlow Condensed', sans-serif; font-size: .68rem;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+}
+.formField input, .formField select, .formField textarea {
+  background: var(--deep); border: 1px solid var(--border); border-radius: 8px;
+  padding: 10px 14px; color: var(--white); font-family: 'Barlow', sans-serif;
+  font-size: .88rem; outline: none; transition: border-color .2s;
+}
+.formField input::placeholder, .formField textarea::placeholder { color: var(--muted); }
+.formField input:focus, .formField select:focus, .formField textarea:focus { border-color: var(--gold); }
+.formField select option { background: var(--card); }
+.formField textarea { resize: vertical; min-height: 80px; }
+.optLabel { font-weight: 300; color: var(--muted); font-size: .7rem; text-transform: none; letter-spacing: 0; }
+.formError {
+  background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3);
+  color: #ef4444; border-radius: 8px; padding: 10px 14px;
+  font-size: .82rem; margin: 0 24px 16px;
+}
+.formActions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 4px; }
+.btnCancel {
+  padding: 10px 20px; background: transparent; border: 1px solid var(--border);
+  border-radius: 8px; color: var(--muted); font-family: 'Barlow Condensed', sans-serif;
+  font-size: .85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: all .2s;
+}
+.btnCancel:hover { border-color: var(--muted2); color: var(--white); }
+.btnSubmit {
+  padding: 10px 24px; background: var(--gold); color: #000; border: none;
+  border-radius: 8px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: .88rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: background .2s;
+}
+.btnSubmit:hover:not(:disabled) { background: var(--gold2); }
+.btnSubmit:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ── MODAL ── */
+.modalOverlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.72); backdrop-filter: blur(4px);
+  z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.modal {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto;
+}
+.modalHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px; border-bottom: 1px solid var(--border);
+}
+.modalTitle { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--white); }
+.modalClose { background: none; border: none; color: var(--muted); font-size: 1rem; cursor: pointer; padding: 4px 8px; transition: color .2s; }
+.modalClose:hover { color: var(--white); }
+.createForm { padding: 20px 24px 24px; }
+
+/* ── LISTING TYPE TOGGLE ── */
+.typeToggle { display: flex; gap: 10px; }
+.typeBtn {
+  flex: 1; padding: 10px; background: var(--deep); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--muted); font-family: 'Barlow Condensed', sans-serif;
+  font-size: .82rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; transition: all .2s;
+}
+.typeBtn:hover { border-color: var(--muted2); color: var(--white); }
+.typeBtnActive { border-color: var(--gold); color: var(--gold); background: rgba(245,166,35,.08); }
+
+/* ── LISTINGS GRID ── */
+.listingsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.listingCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 18px; transition: border-color .2s;
+}
+.listingCard:hover { border-color: rgba(245,166,35,.3); }
+.addListingCard {
+  cursor: pointer; border-style: dashed; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 140px;
+}
+.addListingCard:hover { border-color: var(--gold); }
+.listingImgBox {
+  height: 100px; background: var(--card2); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem; margin-bottom: 12px; overflow: hidden;
+}
+.listingImg { width: 100%; height: 100%; object-fit: cover; display: block; }
+.listingBadge {
+  display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: .62rem;
+  letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 10px; border-radius: 100px; margin-bottom: 8px;
+}
+.listingBadgeProd { background: rgba(245,166,35,.1); border: 1px solid rgba(245,166,35,.3); color: var(--gold); }
+.listingBadgeSvc  { background: rgba(59,130,246,.1);  border: 1px solid rgba(59,130,246,.3);  color: var(--blue); }
+.listingName { font-size: .9rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.listingCat  { font-size: .72rem; color: var(--muted); margin-bottom: 4px; }
+.listingPrice { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 6px; }
+.listingDesc  { font-size: .75rem; color: var(--muted2); line-height: 1.4; margin-bottom: 6px; }
+.listingCond  { font-size: .7rem; color: var(--muted); }
+
+/* ── TABLE EMPTY STATE ── */
+.tableEmpty {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 60px 24px; text-align: center; gap: 10px;
+}
+.tableEmpty span { font-size: 2.5rem; }
+.tableEmpty p { color: var(--muted); font-size: .85rem; }
+
+/* ── PROMOTIONS GRID ── */
+.promoGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.promoCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 22px; transition: border-color .2s;
+}
+.promoCard:hover { border-color: rgba(245,166,35,.3); }
+.promoBadge {
+  display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #000; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 1px;
+  padding: 3px 14px; border-radius: 100px; margin-bottom: 12px;
+}
+.promoTitle   { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+.promoDesc    { font-size: .8rem; color: var(--muted2); line-height: 1.5; margin-bottom: 10px; }
+.promoValidity { font-size: .72rem; color: var(--muted); margin-bottom: 10px; }
+.promoStatus {
+  display: inline-block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: .65rem; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 2px 10px; border-radius: 100px;
+}
+
+/* ── REVIEWS PANEL ── */
+.reviewSummaryBar {
+  display: flex; align-items: center; gap: 20px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 22px 28px; margin-bottom: 22px;
+}
+.reviewBigScore { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--gold); line-height: 1; }
+.reviewBigStars { font-size: 1.2rem; color: var(--gold); margin-bottom: 4px; }
+.reviewBigCount { font-size: .8rem; color: var(--muted); }
+
+.reviewsList { display: flex; flex-direction: column; gap: 14px; }
+.reviewCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 18px 20px; transition: border-color .2s;
+}
+.reviewCard:hover { border-color: rgba(245,166,35,.2); }
+.reviewCardHdr { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.reviewCardAvatar {
+  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: .9rem; color: #000;
+}
+.reviewCardName  { font-size: .88rem; font-weight: 600; color: var(--white); }
+.reviewCardDate  { font-size: .7rem; color: var(--muted); margin-top: 1px; }
+.reviewCardStars { color: var(--gold); font-size: .9rem; flex-shrink: 0; letter-spacing: 2px; }
+.reviewCardProduct { font-size: .75rem; color: var(--muted); margin-bottom: 8px; }
+.reviewCardComment { font-size: .83rem; color: var(--muted2); line-height: 1.6; font-style: italic; }
+
+/* ── SETTINGS PANEL ── */
+.settingsCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 24px 28px; margin-bottom: 20px;
+}
+.settingsCardHdr {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
+}
+.settingsCardIcon {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  background: rgba(245,166,35,.1); border: 1px solid rgba(245,166,35,.2);
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+}
+.settingsCardTitle { font-family: 'Barlow Condensed', sans-serif; font-size: .95rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 2px; }
+.settingsCardSub   { font-size: .75rem; color: var(--muted); }
+
+.settingsEmailRow  { display: flex; align-items: flex-end; gap: 14px; margin-bottom: 4px; }
+.emailNote { font-size: .72rem; color: var(--muted); padding-bottom: 12px; white-space: nowrap; flex-shrink: 0; }
+.inputDisabled { opacity: .5; cursor: not-allowed; }
+
+.settingsSaveRow {
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 14px; margin-top: 6px; padding-top: 18px; border-top: 1px solid var(--border);
+}
+.settingsMsg     { font-size: .82rem; flex: 1; }
+.settingsMsgOk   { color: var(--green); }
+.settingsMsgErr  { color: #ef4444; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .twoCol       { grid-template-columns: 1fr; }
+  .bizPanelGrid { grid-template-columns: 1fr; }
+  .statRow      { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .sidebar { display: none; }
+  .sidebar    { display: none; }
+  .formRow    { grid-template-columns: 1fr; }
+  .listingsGrid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .settingsEmailRow { flex-direction: column; align-items: stretch; }
+  .emailNote  { padding-bottom: 0; }
 }

@@ -152,13 +152,13 @@ export default function LoginPage() {
           <div className={styles.socialLabel}>Follow Us · @MC.RYDR</div>
           <div className={styles.socialIcons}>
             {[
-              { label: 'X', cls: styles.xBtn, svg: <path d="M17.5 3h-3.5l-4 5.5L6 3H2l5.5 7.5L2 18h3.5l4.5-6 4 6H18l-5.5-7.5L17.5 3z" fill="currentColor"/> },
-              { label: 'Instagram', cls: styles.igBtn, svg: <><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="17" cy="7" r="1" fill="currentColor"/></> },
-              { label: 'TikTok', cls: styles.ttBtn, svg: <path d="M19 3v4c-1.5 0-3-.5-4-2v8c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6v4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2V3h8z" fill="currentColor"/> },
-              { label: 'Facebook', cls: styles.fbBtn, svg: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="1.5" fill="none"/> },
-              { label: 'Snapchat', cls: styles.scBtn, svg: <path d="M12 2C9 2 7 4 7 7v1H5l1 3c-1 .5-2 1-2 2s2 1 2 2c0 .5-1 2-4 2.5.5 1 2 1.5 4 1.5.5 1 1.5 1.5 3 1.5.5.5 1 .5 3 .5s2.5 0 3-.5c1.5 0 2.5-.5 3-1.5 2-.5 3.5-1 4-1.5-3-.5-4-2-4-2.5 0-1 2-1.5 2-2s-1-1.5-2-2l1-3h-2V7c0-3-2-5-5-5z" fill="currentColor"/> },
-            ].map(({ label, cls, svg }) => (
-              <a key={label} href="#" className={`${styles.socialBtn} ${cls}`} aria-label={label}>
+              { label: 'X',         href: 'https://x.com/MCRYDRapp',                                                          cls: styles.xBtn,  svg: <path d="M17.5 3h-3.5l-4 5.5L6 3H2l5.5 7.5L2 18h3.5l4.5-6 4 6H18l-5.5-7.5L17.5 3z" fill="currentColor"/> },
+              { label: 'Instagram', href: 'https://www.instagram.com/mc.rydr?igsh=bjhldTMxd2dodjJm',                          cls: styles.igBtn, svg: <><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="17" cy="7" r="1" fill="currentColor"/></> },
+              { label: 'TikTok',    href: 'https://www.tiktok.com/@mc.rydr?_r=1&_t=ZS-96T7RcYPGWy',                          cls: styles.ttBtn, svg: <path d="M19 3v4c-1.5 0-3-.5-4-2v8c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6v4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2V3h8z" fill="currentColor"/> },
+              { label: 'Facebook',  href: 'https://www.facebook.com/share/18bhbeog7R/',                                       cls: styles.fbBtn, svg: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="1.5" fill="none"/> },
+              { label: 'Snapchat',  href: 'https://www.snapchat.com/add/mc.rydr?share_id=YGg9gN8VVl0&locale=en-GB',           cls: styles.scBtn, svg: <path d="M12 2C9 2 7 4 7 7v1H5l1 3c-1 .5-2 1-2 2s2 1 2 2c0 .5-1 2-4 2.5.5 1 2 1.5 4 1.5.5 1 1.5 1.5 3 1.5.5.5 1 .5 3 .5s2.5 0 3-.5c1.5 0 2.5-.5 3-1.5 2-.5 3.5-1 4-1.5-3-.5-4-2-4-2.5 0-1 2-1.5 2-2s-1-1.5-2-2l1-3h-2V7c0-3-2-5-5-5z" fill="currentColor"/> },
+            ].map(({ label, href, cls, svg }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={`${styles.socialBtn} ${cls}`} aria-label={label}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">{svg}</svg>
               </a>
             ))}

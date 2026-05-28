@@ -91,8 +91,15 @@ export default function SignupPage() {
     <>
       <nav className={styles.nav}>
         <Link href="/" className={styles.navLogo}>
-          <div className={styles.logoSq}>MC</div>
-          <div className={styles.navWordmark}>MC<span>RYDR</span></div>
+          <div className={styles.logoSq}>
+            <svg width="20" height="20" viewBox="0 0 40 40" fill="none">
+              <path d="M8 28V14L14 22.5L20 14L26 22.5L32 14V28" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <div className={styles.navWordmark}>MC<span>RYDR</span></div>
+            <div className={styles.navTagline}>Motorcycle Community</div>
+          </div>
         </Link>
         <Link href="/" className={styles.navBack}>← Back to Login</Link>
       </nav>
