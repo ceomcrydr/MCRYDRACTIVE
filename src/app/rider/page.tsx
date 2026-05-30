@@ -1362,7 +1362,7 @@ function ProfilePanel() {
     const p = prof as ProfileData
     setProfile({ ...p, email: user.email || '' })
     setBikes((b as BikeData[]) || [])
-    setTeams((t as TeamMembership[]) || [])
+    setTeams((t as unknown as TeamMembership[]) || [])
     setEName(p?.full_name || '')
     setEPhone(p?.phone || '')
     setECountry(p?.country || '')
