@@ -111,7 +111,6 @@ export default function RiderDashboard() {
                   >
                     <span className={styles.niIcon}>{item.icon}</span>
                     <span className={styles.niLabel}>{item.label}</span>
-                    {item.badge && <span className={styles.niBadge}>{item.badge}</span>}
                   </div>
                 ))}
               </div>
